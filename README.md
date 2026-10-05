@@ -41,15 +41,15 @@ On Linux systems, you must install core multimedia and OpenGL packages before ha
 
 ---
 
-## Required Assets Download
+//## Required Assets Download
 
-Because the modern MediaPipe API uses decoupled architecture, you **must download** the core pipeline assets manually before launching the translator.
+//Because the modern MediaPipe API uses decoupled architecture, you **must download** the core pipeline assets manually before launching the translator.
 
-Run the following command in your project directory to download the official Google AI bundle:
+//Run the following command in your project directory to download the official Google AI bundle:
 
-```bash
-wget -q https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
-```
+//```bash
+//wget -q https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+//```
 
 ### Model Directory Structure
 Make sure your root folder contains these precise files before running the project:
