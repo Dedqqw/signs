@@ -19,7 +19,7 @@ This project supports **Python 3.10+** (fully tested on modern Python versions u
 
 ---
 
-###  Linux Setup (Ubuntu / Debian / Kali)
+### inux Setup (Ubuntu / Debian / Kali)
 
 On Linux systems, you must install core multimedia and OpenGL packages before handling Python dependencies to prevent `ImportError: libGL.so` crashes.
 
@@ -43,14 +43,24 @@ On Linux systems, you must install core multimedia and OpenGL packages before ha
 
 ## Required Assets Download
 
-Because the modern MediaPipe API uses decoupled architecture, you **must download** the hand detection model manually before launching the translator.
+Because the modern MediaPipe API uses decoupled architecture, you **must download** the core pipeline assets manually before launching the translator.
 
-1. Download the official Google AI asset: [hand_landmarker.task](https://googleapis.com)
-2. Place the downloaded `hand_landmarker.task` file into your root project directory (right next to `main.py` and `asl_model.p`).
+Run the following command in your project directory to download the official Google AI bundle:
+
+```bash
+wget -q https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+```
+
+### Model Directory Structure
+Make sure your root folder contains these precise files before running the project:
+* `hand_landmarker.task` ──► High-level pipeline bundle (downloaded via wget above)
+* `hand_detector.tflite` ──► Core Palm Detection model (MediaPipe internal)
+* `hand_landmarks_detector.tflite` ──► 21-Skeletal Landmark extractor
+* `asl_model.p` ──► Your trained Sign Language classification model
 
 ---
 
-## How to Run
+##  How to Run
 
 1. **Collect your own dataset** (Optional):
    ```bash
